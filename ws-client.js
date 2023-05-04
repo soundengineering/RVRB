@@ -51,6 +51,62 @@ const eventHandlers = {
       channelId = data.params.channelId
       join() // server sends ready when it's ready to receive commands
     }
+  },
+  pushChannelMessage: (data) => {
+    // received a chat message from the channel
+    // this is where you would handle commands
+    console.log(`Received message from channel: ${data.params.message}`)
+  },
+  pushNotification: (data) => {
+    // received a notification from the channel
+    // this is where you would handle notifications
+    console.log(`Received notification from channel: ${data.params.message}`)
+  },
+  updateChannel: (data) => {
+    // received an update to the channel
+    // this is where you would handle updates
+    console.log(`Received update from channel: ${data.params.message}`)
+  },
+  updateChannelUsers: (data) => {
+    // received an update to the channel users (join, leave, etc)
+    // this is where you would handle updates
+    console.log(`Received update from channel users: ${data.params.message}`)
+  },
+  updateChannelUser: (data) => {
+    // received an update to a channel user (change display name, etc)
+    // this is where you would handle updates
+    console.log(`Received update from channel user: ${data.params.message}`)
+  },
+  updateChannelDjs: (data) => {
+    // received an update to the channel djs (add, remove, etc)
+    // this is where you would handle updates
+    console.log(`Received update from channel djs: ${data.params.message}`)
+  },
+  updateChannelMeter: (data) => {
+    // received a voting update
+    // this is where you would handle updates
+    console.log(`Received update from channel meter: ${data.params.message}`)
+  },
+  updateChannelUserStatus: (data) => {
+    // received an update to a channel user's status (mute, block, afk, typing)
+    // this is where you would handle updates
+    console.log(`Received update from channel user status: ${data.params.message}`)
+  },
+  leaveChannel: (data) => {
+    // received a leave channel message
+    // this command instructs the bot to leave the channel, nicely
+    // this is where you would handle updates
+    console.log(`Received leave channel message: ${data.params.message}`)
+  },
+  playChannelTrack: (data) => {
+    // received a play track message
+    // this is sent when a new track is playing
+    console.log(`Received play track message: ${data.params.message}`)
+  },
+  pauseChannelTrack: (data) => {
+    // received a pause track message
+    // this is sent when a track is paused
+    console.log(`Received pause track message: ${data.params.message}`)
   }
 }
 
